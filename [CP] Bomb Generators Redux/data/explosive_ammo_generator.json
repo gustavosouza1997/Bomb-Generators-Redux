@@ -1,0 +1,68 @@
+{
+    "Changes": [  
+        {
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/Explosive_Ammo_Generator",
+			"FromFile": "assets/explosive_ammo_generator.png"
+		},
+
+        {
+			"LogName": "Explosive Ammo Gererator Setup",
+			"Action": "EditData",
+			"Target": "Data/BigCraftables",
+			"Entries": {
+				"{{ModId}}_Explosive_Ammo_Generator": {
+					"Name": "{{ModId}}_Explosive_Ammo_Generator",
+					"DisplayName": "{{i18n: BG_Explosive_Ammo_Generator_Name}}",
+					"Description": "{{i18n: BG_Explosive_Ammo_Generator_Description}}",
+					"Price": 1,
+					"Fragility": 0,
+					"CanBePlacedOutdoors": true,
+					"CanBePlacedIndoors": true,
+					"IsLamp": false,
+					"Texture": "Mods/{{ModId}}/Explosive_Ammo_Generator",
+                    "SpriteIndex": 0,
+					"CustomFields": {}
+				}
+            }
+        },
+
+        {
+            "LogName": "Explosive Ammo Process",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "Entries": {
+                "(BC){{ModId}}_Explosive_Ammo_Generator": {
+                    "OutputRules": [
+                        {
+                            "Id": "{{ModId}}_Explosive_Ammo_Generator",
+                            "Triggers": [
+                                {
+                                    "Trigger": "MachinePutDown, OutputCollected, DayUpdate"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "ItemId": "(O)441",
+                                    "MinStack": "{{[EAG] Output Quantity}}",
+                                    "MaxStack": "{{[EAG] Output Quantity}}"
+                                }
+                            ],
+                            "MinutesUntilReady": "{{[EAG] Time Required}}"
+                        }
+                    ]
+                }
+            }
+
+        },
+
+        {
+             "LogName": "MachinesCrafting Recipe",
+             "Action": "EditData",
+             "Target": "Data/CraftingRecipes",
+             "Entries": {
+                "{{ModId}}_Explosive_Ammo_Generator": "99 1 334 10/Home/{{ModId}}_Explosive_Ammo_Generator/true/{{[EAG] Required Level}}/{{i18n: BG_Explosive_Ammo_Generator_Name}}"
+             }
+         }
+    ]
+}

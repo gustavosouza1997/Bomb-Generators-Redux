@@ -1,0 +1,68 @@
+{
+    "Changes": [  
+        {
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/Cherry_Bomb_Generator",
+			"FromFile": "assets/cherry_bomb_generator.png"
+		},
+
+        {
+			"LogName": "Cherry Bomb Gererator Setup",
+			"Action": "EditData",
+			"Target": "Data/BigCraftables",
+			"Entries": {
+				"{{ModId}}_Cherry_Bomb_Generator": {
+					"Name": "{{ModId}}_Cherry_Bomb_Generator",
+					"DisplayName": "{{i18n: BG_Cherry_Bomb_Generator_Name}}",
+					"Description": "{{i18n: BG_Cherry_Bomb_Generator_Description}}",
+					"Price": 1,
+					"Fragility": 0,
+					"CanBePlacedOutdoors": true,
+					"CanBePlacedIndoors": true,
+					"IsLamp": false,
+					"Texture": "Mods/{{ModId}}/Cherry_Bomb_Generator",
+                    "SpriteIndex": 0,
+					"CustomFields": {}
+				}
+            }
+        },
+
+        {
+            "LogName": "Cherry Bomb Gererator Process",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "Entries": {
+                "(BC){{ModId}}_Cherry_Bomb_Generator": {
+                    "OutputRules": [
+                        {
+                            "Id": "{{ModId}}_Cherry_Bomb_Generator_Bombs",
+                            "Triggers": [
+                                {
+                                    "Trigger": "MachinePutDown, OutputCollected, DayUpdate"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "ItemId": "(O)286",
+                                    "MinStack": "{{[CBG] Output Quantity}}",
+                                    "MaxStack": "{{[CBG] Output Quantity}}"
+                                }
+                            ],
+                            "MinutesUntilReady": "{{[CBG] Time Required}}"
+                        }
+                    ]
+                }
+            }
+
+        },
+
+        {
+             "LogName": "MachinesCrafting Recipe",
+             "Action": "EditData",
+             "Target": "Data/CraftingRecipes",
+             "Entries": {
+                "{{ModId}}_Cherry_Bomb_Generator": "96 1 334 10/Home/{{ModId}}_Cherry_Bomb_Generator/true/{{[CBG] Required Level}}/{{i18n: BG_Cherry_Bomb_Generator_Name}}"
+             }
+         }
+    ]
+}

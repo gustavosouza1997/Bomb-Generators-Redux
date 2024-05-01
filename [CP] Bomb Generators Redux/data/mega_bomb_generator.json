@@ -1,0 +1,68 @@
+{
+    "Changes": [  
+        {
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/Mega_Bomb_Generator",
+			"FromFile": "assets/mega_bomb_generator.png"
+		},
+
+        {
+			"LogName": "Mega Bomb Gererator Setup",
+			"Action": "EditData",
+			"Target": "Data/BigCraftables",
+			"Entries": {
+				"{{ModId}}_Mega_Bomb_Generator": {
+					"Name": "{{ModId}}_Mega_Bomb_Generator",
+					"DisplayName": "{{i18n: BG_Mega_Bomb_Generator_Name}}",
+					"Description": "{{i18n: BG_Mega_Bomb_Generator_Description}}",
+					"Price": 1,
+					"Fragility": 0,
+					"CanBePlacedOutdoors": true,
+					"CanBePlacedIndoors": true,
+					"IsLamp": false,
+					"Texture": "Mods/{{ModId}}/Mega_Bomb_Generator",
+                    "SpriteIndex": 0,
+					"CustomFields": {}
+				}
+            }
+        },
+
+        {
+            "LogName": "Mega Bomb Process",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "Entries": {
+                "(BC){{ModId}}_Mega_Bomb_Generator": {
+                    "OutputRules": [
+                        {
+                            "Id": "{{ModId}}_Mega_Bomb_Generator",
+                            "Triggers": [
+                                {
+                                    "Trigger": "MachinePutDown, OutputCollected, DayUpdate"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "ItemId": "(O)288",
+                                    "MinStack": "{{[MBG] Output Quantity}}",
+                                    "MaxStack": "{{[MBG] Output Quantity}}"
+                                }
+                            ],
+                            "MinutesUntilReady": "{{[MBG] Time Required}}"
+                        }
+                    ]
+                }
+            }
+
+        },
+
+        {
+             "LogName": "MachinesCrafting Recipe",
+             "Action": "EditData",
+             "Target": "Data/CraftingRecipes",
+             "Entries": {
+                "{{ModId}}_Mega_Bomb_Generator": "98 1 336 10/Home/{{ModId}}_Mega_Bomb_Generator/true/{{[MBG] Required Level}}/{{i18n: BG_Mega_Bomb_Generator_Name}}"
+             }
+         }
+    ]
+}

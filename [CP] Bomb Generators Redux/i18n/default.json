@@ -1,0 +1,48 @@
+{   //Machines 
+    "BG_Bomb_Generator_Name": "Bomb Generator",
+    "BG_Bomb_Generator_Description": "Generates Bombs",
+    "BG_Cherry_Bomb_Generator_Name": "Cherry Bomb Generator",
+    "BG_Cherry_Bomb_Generator_Description": "Generates Cherry Bombs",
+    "BG_Explosive_Ammo_Generator_Name": "Explosive Ammo Generator",
+    "BG_Explosive_Ammo_Generator_Description": "Generates Explosive Ammo",
+    "BG_Mega_Bomb_Generator_Name": "Mega Bomb Generator",
+    "BG_Mega_Bomb_Generator_Description": "Generates Mega Bombs",
+
+    //Configs
+    "config.section.Bomb Generator.name": "Bomb Generator",
+    "config.section.Bomb Generator.description": "Configs for the Bomb Generator",
+    "config.[BG] Enabled.name": "[BG] Enabled",
+    "config.[BG] Enabled.description": "If the Bomb Generator should be enabled",
+    "config.[BG] Time Required.description": "The time required for the output",
+    "config.[BG] Output Quantity.description": "The ammount of Bombs to be generated",
+    "config.[BG] Required Level.name": "[BG] Required Level",
+    "config.[BG] Required Level.description": "Mining Level required to unlock the machine",
+
+    "config.section.Cherry Bomb Generator.name": "Cherry Bomb Generator",
+    "config.section.Cherry Bomb Generator.description": "Configs for the Cherry Bomb Generator",
+    "config.[CBG] Enabled.name": "[CBG] Enabled",
+    "config.[CBG] Enabled.description": "If the Cherry Bomb Generator should be enabled",
+    "config.[CBG] Time Required.description": "The time required for the output",
+    "config.[CBG] Output Quantity.description": "The ammount of Cherry Bombs to be generated",
+    "config.[CBG] Required Level.name": "[CBG] Required Level",
+    "config.[CBG] Required Level.description": "Mining Level required to unlock the machine",
+
+    "config.section.Explosive Ammo Generator.name": "Explosive Ammo Generator",
+    "config.section.Explosive Ammo Generator.description": "Configs for the Explosive Ammo Generator",
+    "config.[EAG] Enabled.name": "[EAG] Enabled",
+    "config.[EAG] Enabled.description": "If the Explosive Ammo Generator should be enabled",
+    "config.[EAG] Time Required.description": "The time required for the output",
+    "config.[EAG] Output Quantity.description": "The ammount of Explosive Ammo to be generated",
+    "config.[EAG] Required Level.name": "[EAG] Required Level",
+    "config.[EAG] Required Level.description": "Combat Level required to unlock the machine",
+
+
+    "config.section.Mega Bomb Generator.name": "Mega Bomb Generator",
+    "config.section.Mega Bomb Generator.description": "Configs for the Mega Bomb Generator",
+    "config.[MBG] Enabled.name": "[MBG] Enabled",
+    "config.[MBG] Enabled.description": "If the Mega Bomb Generator should be enabled",
+    "config.[MBG] Time Required.description": "The time required for the output",
+    "config.[MBG] Output Quantity.description": "The ammount of Mega Bombs to be generated",
+    "config.[MBG] Required Level.name": "[MBG] Required Level",
+    "config.[MBG] Required Level.description": "Mining Level required to unlock the machine"
+}

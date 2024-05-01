@@ -1,0 +1,11 @@
+{
+    "Name": "Bomb Generators Redux",
+    "Author": "GustavoSouza1997",
+    "Version": "1.0.3",
+    "Description": "An updated version of Bomb Generators from MortaliB.",
+    "UniqueID": "GustavoSouza1997.BombGeneratorsRedux",
+    "UpdateKeys": ["Nexus:21434"],
+    "ContentPackFor": {
+        "UniqueID": "Pathoschild.ContentPatcher"
+    }
+}

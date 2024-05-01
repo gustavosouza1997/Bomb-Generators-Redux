@@ -1,0 +1,68 @@
+{
+    "Changes": [  
+        {
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/Bomb_Generator",
+			"FromFile": "assets/bomb_generator.png"
+		},
+
+        {
+			"LogName": "Bomb Generator Setup",
+			"Action": "EditData",
+			"Target": "Data/BigCraftables",
+			"Entries": {
+				"{{ModId}}_Bomb_Generator": {
+					"Name": "{{ModId}}_Bomb_Generator",
+					"DisplayName": "{{i18n: BG_Bomb_Generator_Name}}",
+					"Description": "{{i18n: BG_Bomb_Generator_Description}}",
+					"Price": 1,
+					"Fragility": 0,
+					"CanBePlacedOutdoors": true,
+					"CanBePlacedIndoors": true,
+					"IsLamp": false,
+					"Texture": "Mods/{{ModId}}/Bomb_Generator",
+                    "SpriteIndex": 0,
+					"CustomFields": {}
+				}
+            }
+        },
+
+        {
+            "LogName": "Bomb Generator Process",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "Entries": {
+                "(BC){{ModId}}_Bomb_Generator": {
+                    "OutputRules": [
+                        {
+                            "Id": "{{ModId}}_Bomb_Generator_Bombs",
+                            "Triggers": [
+                                {
+                                    "Trigger": "MachinePutDown, OutputCollected, DayUpdate"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "ItemId": "(O)287",
+                                    "MinStack": "{{[BG] Output Quantity}}",
+                                    "MaxStack": "{{[BG] Output Quantity}}"
+                                }
+                            ],
+                            "MinutesUntilReady": "{{[BG] Time Required}}"
+                        }
+                    ]
+                }
+            }
+
+        },
+
+        {
+             "LogName": "MachinesCrafting Recipe",
+             "Action": "EditData",
+             "Target": "Data/CraftingRecipes",
+             "Entries": {
+                 "{{ModId}}_Bomb_Generator": "97 1 335 10/Home/{{ModId}}_Bomb_Generator/true/{{[BG] Required Level}}/{{i18n: BG_Bomb_Generator_Name}}"
+             }
+         }
+    ]
+}
